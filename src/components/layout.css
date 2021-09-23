@@ -53,6 +53,15 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  color: #FFDD66;
+  padding: 0 .25em;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  font-size: 1.25em;
+  margin-bottom: .5em;
 }
 a:active,
 a:hover {

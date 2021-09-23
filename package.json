@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Knihl Website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "KNihl Musician Website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nikhil Desai <nikhildesigning@gmail.com>",
   "dependencies": {
     "gatsby": "^4.0.0-zz-next.1",
     "gatsby-plugin-image": "^2.0.0-zz-next.1",
@@ -16,7 +16,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0"
   },
   "devDependencies": {
     "prettier": "2.3.2"

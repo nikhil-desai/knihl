@@ -1,0 +1,22 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+}
+.logo {
+    margin-bottom: 1.45rem;
+    border-radius: 0 0 1.75em 1.75em;
+    background: linear-gradient(145deg, #000, #000);
+    box-shadow:  28px 28px 56px #171717,
+             -28px -28px 56px #2f2f2f;
+}
+button {
+    border-radius: .5em;
+    background: linear-gradient(145deg, #000, #000);
+    box-shadow:  28px 28px 56px #171717,
+             -28px -28px 56px #2f2f2f;
+    color: white;
+    padding: .5em;
+    border: none;
+}
