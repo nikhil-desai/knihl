@@ -1,9 +1,9 @@
 {
-  "name": "Knihl Website",
+  "name": "gatsby-starter-default",
   "private": true,
-  "description": "KNihl Musician Website",
+  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Nikhil Desai <nikhildesigning@gmail.com>",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^4.0.0-zz-next.1",
     "gatsby-plugin-image": "^2.0.0-zz-next.1",
