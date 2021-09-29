@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import AudioControls from "./AudioControls"
+import AudioControls from "./audioControls"
 import Backdrop from "./Backdrop"
 import "./audioPlayer.css"
 
