@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
+import {Howl} from 'howler';
+
 import AudioControls from "./audioControls"
 import Backdrop from "./Backdrop"
 import "./audioPlayer.css"
@@ -13,7 +15,7 @@ const AudioPlayer = ({ tracks }) => {
   const { title, artist, color, image, audioSrc } = tracks[trackIndex]
 
   // Refs
-  const audioRef = useRef(new Audio(audioSrc))
+  const audioRef = useRef(new Howl({src: [audioSrc]}))
   const intervalRef = useRef()
   const isReady = useRef(false)
 
@@ -97,7 +99,7 @@ const AudioPlayer = ({ tracks }) => {
   useEffect(() => {
     audioRef.current.pause()
 
-    audioRef.current = new Audio(audioSrc)
+    audioRef.current = new Howl({src: [audioSrc]})
     setTrackProgress(audioRef.current.currentTime)
 
     if (isReady.current) {
