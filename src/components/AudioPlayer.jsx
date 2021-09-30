@@ -54,7 +54,7 @@ const AudioPlayer = ({ tracks }) => {
     }, [1000])
   }
 
-  /* Scrubing
+  // Scrubing
   const onScrub = value => {
     // Clear any timers already running
     clearInterval(intervalRef.current)
@@ -69,20 +69,6 @@ const AudioPlayer = ({ tracks }) => {
     }
     startTimer()
   }
-
-  <input
-  type="range"
-  value={trackProgress}
-  step="1"
-  min="0"
-  max={duration ? duration : `${duration}`}
-  className="progress"
-  onChange={e => onScrub(e.target.value)}
-  onMouseUp={onScrubEnd}
-  onKeyUp={onScrubEnd}
-  style={{ background: trackStyling }}
-/>
-*/
 
   // Gradient Change
   const currentPercentage = duration
@@ -147,6 +133,18 @@ const AudioPlayer = ({ tracks }) => {
         trackIndex={trackIndex}
         activeColor={color}
         isPlaying={isPlaying}
+      />
+      <input
+        type="range"
+        value={trackProgress}
+        step="1"
+        min="0"
+        max={duration ? duration : `${duration}`}
+        className="progress"
+        onChange={e => onScrub(e.target.value)}
+        onMouseUp={onScrubEnd}
+        onKeyUp={onScrubEnd}
+        style={{ background: trackStyling }}
       />
     </div>
   )
