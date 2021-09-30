@@ -15,7 +15,7 @@ const AudioPlayer = ({ tracks }) => {
   const { title, artist, color, image, audioSrc } = tracks[trackIndex]
 
   // Refs
-  const audioRef = useRef(new Howl({ src: [audioSrc] }))
+  const audioRef = useRef(new Howl({ src: [audioSrc], html5: false }))
   const intervalRef = useRef()
   const isReady = useRef(false)
 
@@ -99,7 +99,7 @@ const AudioPlayer = ({ tracks }) => {
   useEffect(() => {
     audioRef.current.pause()
 
-    audioRef.current = new Howl({ src: [audioSrc] })
+    audioRef.current = new Howl({ src: [audioSrc], html5: false })
     setTrackProgress(audioRef.current.currentTime)
 
     if (isReady.current) {
@@ -146,6 +146,7 @@ const AudioPlayer = ({ tracks }) => {
         onKeyUp={onScrubEnd}
         style={{ background: trackStyling }}
       />
+      <p>Note: Player is finicky on mobile.</p>
     </div>
   )
 }
