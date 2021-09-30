@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import {Howl} from 'howler';
+import { Howl } from "howler"
 
 import AudioControls from "./audioControls"
 import Backdrop from "./Backdrop"
@@ -15,7 +15,7 @@ const AudioPlayer = ({ tracks }) => {
   const { title, artist, color, image, audioSrc } = tracks[trackIndex]
 
   // Refs
-  const audioRef = useRef(new Howl({src: [audioSrc]}))
+  const audioRef = useRef(new Howl({ src: [audioSrc] }))
   const intervalRef = useRef()
   const isReady = useRef(false)
 
@@ -54,7 +54,7 @@ const AudioPlayer = ({ tracks }) => {
     }, [1000])
   }
 
-  // Scrubing
+  /* Scrubing
   const onScrub = value => {
     // Clear any timers already running
     clearInterval(intervalRef.current)
@@ -69,6 +69,20 @@ const AudioPlayer = ({ tracks }) => {
     }
     startTimer()
   }
+
+  <input
+  type="range"
+  value={trackProgress}
+  step="1"
+  min="0"
+  max={duration ? duration : `${duration}`}
+  className="progress"
+  onChange={e => onScrub(e.target.value)}
+  onMouseUp={onScrubEnd}
+  onKeyUp={onScrubEnd}
+  style={{ background: trackStyling }}
+/>
+*/
 
   // Gradient Change
   const currentPercentage = duration
@@ -99,7 +113,7 @@ const AudioPlayer = ({ tracks }) => {
   useEffect(() => {
     audioRef.current.pause()
 
-    audioRef.current = new Howl({src: [audioSrc]})
+    audioRef.current = new Howl({ src: [audioSrc] })
     setTrackProgress(audioRef.current.currentTime)
 
     if (isReady.current) {
@@ -127,18 +141,6 @@ const AudioPlayer = ({ tracks }) => {
           onPrevClick={toPrevTrack}
           onNextClick={toNextTrack}
           onPlayPauseClick={setIsPlaying}
-        />
-        <input
-          type="range"
-          value={trackProgress}
-          step="1"
-          min="0"
-          max={duration ? duration : `${duration}`}
-          className="progress"
-          onChange={e => onScrub(e.target.value)}
-          onMouseUp={onScrubEnd}
-          onKeyUp={onScrubEnd}
-          style={{ background: trackStyling }}
         />
       </div>
       <Backdrop
